@@ -1,0 +1,68 @@
+// ATL_API.idl : ATL_API 的 IDL 源
+//
+
+// 此文件将由 MIDL 工具处理以
+// 产生类型库(ATL_API.tlb)和封送处理代码。
+
+import "oaidl.idl";
+import "ocidl.idl";
+
+[
+	object,
+	uuid(a817e7a2-43fa-11d0-9e44-00aa00b6770a),
+	dual,	
+	pointer_default(unique)
+]
+interface IComponentRegistrar : IDispatch
+{
+	[id(1)]	HRESULT Attach([in] BSTR bstrPath);
+	[id(2)]	HRESULT RegisterAll();
+	[id(3)]	HRESULT UnregisterAll();
+	[id(4)]	HRESULT GetComponents([out] SAFEARRAY(BSTR)* pbstrCLSIDs, [out] SAFEARRAY(BSTR)* pbstrDescriptions);
+	[id(5)]	HRESULT RegisterComponent([in] BSTR bstrCLSID);
+	[id(6)] HRESULT UnregisterComponent([in] BSTR bstrCLSID);
+};
+
+[
+	object,
+	uuid(66C5FCF9-15B3-47BE-99DE-E6C676694561),
+	dual,
+	nonextensible,
+	pointer_default(unique)
+]
+interface IAPI_COM : IDispatch{
+	[id(1)] HRESULT Add([in] LONG argv1, [in] LONG argv2, [out,retval] LONG* retval);
+};
+[
+	uuid(709F4F00-CA54-44D8-A5E5-AB41918A4BDA),
+	version(1.0),
+	custom(a817e7a1-43fa-11d0-9e44-00aa00b6770a,"{47107176-F049-4BDC-861B-824F4694EECC}")
+]
+library ATL_APILib
+{
+	importlib("stdole2.tlb");
+	[
+		uuid(47107176-F049-4BDC-861B-824F4694EECC)		
+	]
+	coclass CompReg
+	{
+		[default] interface IComponentRegistrar;
+	};
+	[
+		uuid(950209E1-669C-4D49-B7AC-B9CF5C08A529)		
+	]
+	dispinterface _IAPI_COMEvents
+	{
+		properties:
+		methods:
+	};
+	[
+		uuid(CD830E3F-52E6-4DEC-9808-ABEA2D39231E)		
+	]
+	coclass API_COM
+	{
+		[default] interface IAPI_COM;
+		[default, source] dispinterface _IAPI_COMEvents;
+	};
+};
+

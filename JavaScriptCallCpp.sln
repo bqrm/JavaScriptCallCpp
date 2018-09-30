@@ -1,0 +1,36 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Dll_Cpp", "Dll_Cpp\Dll_Cpp.vcxproj", "{0BDE91D8-7727-452A-B0B9-2B25224842CD}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ATL_API", "ATL_API\ATL_API.vcxproj", "{97D66D3E-FA97-4476-8D22-153182E1620C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0BDE91D8-7727-452A-B0B9-2B25224842CD} = {0BDE91D8-7727-452A-B0B9-2B25224842CD}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "ATL_APIPS", "ATL_API\ATL_APIPS.vcxproj", "{935F45CD-F8AE-4EEC-8465-BDDD5ECD56FC}"
+	ProjectSection(ProjectDependencies) = postProject
+		{97D66D3E-FA97-4476-8D22-153182E1620C} = {97D66D3E-FA97-4476-8D22-153182E1620C}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0BDE91D8-7727-452A-B0B9-2B25224842CD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{0BDE91D8-7727-452A-B0B9-2B25224842CD}.Debug|Win32.Build.0 = Debug|Win32
+		{0BDE91D8-7727-452A-B0B9-2B25224842CD}.Release|Win32.ActiveCfg = Release|Win32
+		{0BDE91D8-7727-452A-B0B9-2B25224842CD}.Release|Win32.Build.0 = Release|Win32
+		{97D66D3E-FA97-4476-8D22-153182E1620C}.Debug|Win32.ActiveCfg = Debug|Win32
+		{97D66D3E-FA97-4476-8D22-153182E1620C}.Debug|Win32.Build.0 = Debug|Win32
+		{97D66D3E-FA97-4476-8D22-153182E1620C}.Release|Win32.ActiveCfg = Release|Win32
+		{97D66D3E-FA97-4476-8D22-153182E1620C}.Release|Win32.Build.0 = Release|Win32
+		{935F45CD-F8AE-4EEC-8465-BDDD5ECD56FC}.Debug|Win32.ActiveCfg = Debug|Win32
+		{935F45CD-F8AE-4EEC-8465-BDDD5ECD56FC}.Release|Win32.ActiveCfg = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

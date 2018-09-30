@@ -1,0 +1,18 @@
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script language="javascript">
+        function Add()
+        {
+            document.getElementById("process_info").innerText = "1+2=" + cpp_object.Add(1, 2);
+        }
+		
+        var cpp_object = new ActiveXObject("API_COM_OBJ.1");
+    </script>
+</head>
+<body>
+    <p id="process_info"></p>
+    <button type="button" onclick="Add()">Add</button>
+</body>
+</html>
